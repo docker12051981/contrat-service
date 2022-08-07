@@ -21,5 +21,5 @@ public interface IContratRepository extends MongoRepository<Contrat,String> {
 
     List<Contrat> findByParent(String id);
 
-    List<Contrat> findContratByOrganisme(Integer organisme);
+    List<Contrat> findContratByOrgId(Integer organisme);
 }

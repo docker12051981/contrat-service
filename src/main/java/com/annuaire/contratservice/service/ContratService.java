@@ -56,9 +56,9 @@ public class ContratService implements IContratService {
     }
 
     @Override
-    public List<Contrat> findContratByOrganisme(Integer organisme)
+    public List<Contrat> findContratByOrgId(Integer organisme)
     {
-        return contratRepository.findContratByOrganisme(organisme);
+        return contratRepository.findContratByOrgId(organisme);
     }
 
     @Override

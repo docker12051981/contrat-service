@@ -56,10 +56,10 @@ public class ContratController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/organisme/{organisme}")
-    public ResponseEntity<List<ContratDto>> findByContratOrganisme(@PathVariable Integer organisme)
+    public ResponseEntity<List<ContratDto>> findContratByOrgId(@PathVariable Integer organisme)
     {
-        List<Contrat> findcontratbyorganisme= contratService.findContratByOrganisme(organisme);
-        return new ResponseEntity<List<ContratDto>>(converter.contratentityToDto(findcontratbyorganisme), HttpStatus.OK);
+        List<Contrat> findcontratbyorgid= contratService.findContratByOrgId(organisme);
+        return new ResponseEntity<List<ContratDto>>(converter.contratentityToDto(findcontratbyorgid), HttpStatus.OK);
     }
 
     @CrossOrigin(origins = "*")

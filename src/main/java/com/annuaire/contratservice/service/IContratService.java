@@ -31,5 +31,5 @@ public interface IContratService {
 
     CustomContrat findContratByCustom(Integer key);
 
-    List<Contrat> findContratByOrganisme(Integer organisme);
+    List<Contrat> findContratByOrgId(Integer organisme);
 }
