@@ -23,6 +23,7 @@ import static com.annuaire.contratservice.model.Contrat.SEQUENCE_NAME;
  * @description interface service contrat
 
  */
+
 @Service
 public class ContratService implements IContratService {
     private final IContratRepository contratRepository;
@@ -36,7 +37,7 @@ public class ContratService implements IContratService {
     @Autowired
     Converter converter;
     @Autowired
-    private SequenceGenerator service;
+    private sequencegen service;
 
     @Override
     public Contrat saveContrat(ContratDto contratDto)
@@ -44,7 +45,7 @@ public class ContratService implements IContratService {
         Contrat contrat = converter.contratdtoToEntity(contratDto);
 
         if(contrat.getParent()==null) {
-            contrat.setTree(1);
+            contrat.setTree(service.getSequencegen(SEQUENCE_NAME));
         }
         return contratRepository.save(contrat);
     }

@@ -12,19 +12,13 @@ import java.util.Objects;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 
-/**
- * @author karim hmadi
-
- * @description implement service sequence generator
-
- */
 @Service
-public class SequenceGenerator {
+public class sequencegen {
 
     @Autowired
     private MongoOperations mongoOperations;
 
-    public int getSequenceNumber(String sequenceName)
+    public int getSequencegen(String sequenceName)
     {
         //get sequence no
         Query query = new Query(Criteria.where("id").is(sequenceName));
